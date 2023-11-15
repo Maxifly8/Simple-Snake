@@ -1,1 +1,2 @@
 # Snake-Game
+CHANGE PATH TO FONT TO YOUR OWN AT LINE 39 (WIP on it to fix)
