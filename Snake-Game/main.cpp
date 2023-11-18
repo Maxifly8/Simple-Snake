@@ -357,6 +357,5 @@ reset:
 
 	TTF_Quit();
 	SDL_Quit();
-	std::cout << "Your score: " << score << "\n";
 	return 0;
 }
