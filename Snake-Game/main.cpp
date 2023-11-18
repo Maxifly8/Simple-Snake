@@ -163,6 +163,7 @@ reset:
 	bool quit = false;
 	
 	short direction = up;
+	short previous_dir = down;
 	int score = 0;
 
 	unsigned int snake_length = 1;
@@ -195,22 +196,32 @@ reset:
 					break;
 
 				case SDLK_w:
+					if(previous_dir == down)
+						break;
 					direction = up;
 					break;
 
 				case SDLK_d:
+					if (previous_dir == left)
+						break;
 					direction = right;
 					break;
 
 				case SDLK_s:
+					if (previous_dir == up)
+						break;
 					direction = down;
 					break;
 
 				case SDLK_a:
+					if (previous_dir == right)
+						break;
 					direction = left;
 					break;
 				}
+				previous_dir = direction;
 			}
+			
 		}
 
 		switch (direction)
@@ -346,6 +357,6 @@ reset:
 
 	TTF_Quit();
 	SDL_Quit();
-	std::cout << score << "\n";
+	std::cout << "Your score: " << score << "\n";
 	return 0;
 }
